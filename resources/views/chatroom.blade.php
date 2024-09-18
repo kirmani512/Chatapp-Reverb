@@ -40,12 +40,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Chat - Welcome, <b></b>!</div>
+                    <div class="card-header">Chat - Welcome, <b>{{ $username }}</b>!</div>
                     <div class="card-body chat-box" id="messages">
                         <!-- Static Chat Messages -->
-
-
-
                     </div>
                 </div>
                 <div class="input-group mt-3">
@@ -59,11 +56,9 @@
         </div>
     </div>
 </body>
-{{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> --}}
-
-
-{{-- <script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
     function SendMsg() {
         sender = "{{ $username }}"
         csrfToken = "{{ csrf_token() }}"
@@ -91,7 +86,7 @@
     }
 
     window.onload = () => {
-        window.Echo.channel('user-message').listen('MessagetSent', function(data) {
+        window.Echo.channel('user-message').listen('MessageSent', function(data) {
             if (data.sender != "{{ $username }}") {
                 $("#messages").append(`
           <div class="chat-message receiver w-50">
@@ -102,6 +97,6 @@
 
         })
     }
-</script> --}}
+</script>
 
 </html>
